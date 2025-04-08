@@ -1,0 +1,67 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="av" 
+    x:Class="WpfApp20.Pages.Task2Page"
+    Title="Task2Page"
+    av:DesignHeight="370" 
+    av:DesignWidth="600">
+
+    <Grid Margin="10,10,10,10">
+
+
+        <TextBlock x:Name="TaskNumberTextBlock"
+                   Text="Задание №2"
+                   FontSize="23" 
+                   FontWeight="Bold" 
+                   Margin="10,8,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" 
+                   Width="184"/>
+
+
+
+        <!-- Поля для ввода данных -->
+        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Width="544" HorizontalAlignment="Center" Margin="0,44,0,96">
+            <StackPanel x:Name="InputFieldsContainer" Margin="10">
+
+                <TextBlock Height="99"><Run Text="Дан файл f, компоненты которого являются целыми числами."/><LineBreak/><Run Text="Никакая из компонент файла не равна нулю. Файл /содержит столько же"/><LineBreak/><Run Text="отрицательных чисел, сколько и положительных."/><LineBreak/><Run Text="Используя вспомогатель- ный файл и, переписать компоненты файла f в файл g так,"/><LineBreak/><Run Text="чтобы в файле у сначала шли положительные, потом отрицательные числа."/></TextBlock>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Stretch">
+    <!-- Первый столбец -->
+    <StackPanel Width="240" Margin="0,0,10,0">
+        <TextBlock Text="Содержимое исходного файла:" FontWeight="Bold"/>
+        <TextBox x:Name="InputContentTextBox" Height="111" IsReadOnly="True" 
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+    </StackPanel>
+
+    <!-- Второй столбец -->
+    <StackPanel Width="240">
+        <TextBlock Text="Содержимое итогового файла (g.txt):" FontWeight="Bold"/>
+        <TextBox x:Name="OutputContentTextBox" Height="111" IsReadOnly="True" 
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+    </StackPanel>
+</StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Кнопка расчёта -->
+        <Button Content="Выбрать файл и рассчитать"
+                HorizontalAlignment="Center"
+                Margin="0,300,0,10" 
+                Padding="10" 
+                Width="560"
+                Height="40"
+                Click="CalculateButton_Click" />
+
+        <!-- Поле для вывода результата -->
+        <TextBlock x:Name="ResultTextBlock" 
+                   VerticalAlignment="Center"
+                   FontSize="18" 
+                   FontWeight="Bold" 
+                   Foreground="Green" Margin="10,246,10,50" />
+    </Grid>
+</Page>
